@@ -1,4 +1,5 @@
-site_name: https://ossinova.github.io/function-docs/ 
+site_name: Demo - Functions
+site_url : https://ossinova.github.io/function-docs/ 
 
 theme:
   name: "readthedocs"

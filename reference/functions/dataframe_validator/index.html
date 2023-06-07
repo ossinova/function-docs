@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Dataframe validator - functions</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Dataframe validator";
+        var mkdocs_page_input_path = "reference/functions/dataframe_validator.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> functions
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Mack</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../SUMMARY/">API Docs</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">functions</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Dataframe validator</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="doc doc-object doc-module">
+
+
+<a id="functions.dataframe_validator"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="functions.dataframe_validator.DataFrameMissingColumnError" class="doc doc-heading">
+        <code>DataFrameMissingColumnError</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code>ValueError</code></p>
+
+  
+      <p>raise this when there's a DataFrame column error</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>functions/dataframe_validator.py</code></summary>
+          <pre class="highlight"><code class="language-python">class DataFrameMissingColumnError(ValueError):
+    """raise this when there's a DataFrame column error"""</code></pre>
+        </details>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="functions.dataframe_validator.DataFrameMissingStructFieldError" class="doc doc-heading">
+        <code>DataFrameMissingStructFieldError</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code>ValueError</code></p>
+
+  
+      <p>raise this when there's a DataFrame column error</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>functions/dataframe_validator.py</code></summary>
+          <pre class="highlight"><code class="language-python">class DataFrameMissingStructFieldError(ValueError):
+    """raise this when there's a DataFrame column error"""</code></pre>
+        </details>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="functions.dataframe_validator.DataFrameProhibitedColumnError" class="doc doc-heading">
+        <code>DataFrameProhibitedColumnError</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code>ValueError</code></p>
+
+  
+      <p>raise this when a DataFrame includes prohibited columns</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>functions/dataframe_validator.py</code></summary>
+          <pre class="highlight"><code class="language-python">class DataFrameProhibitedColumnError(ValueError):
+    """raise this when a DataFrame includes prohibited columns"""</code></pre>
+        </details>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="functions.dataframe_validator.validate_absence_of_columns" class="doc doc-heading">
+<code class="highlight language-python">validate_absence_of_columns(df, prohibited_col_names)</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Validate that none of the prohibited column names are present among
+specified DataFrame columns.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>df</code></td>
+          <td>
+                <code><span title="pyspark.sql.DataFrame">DataFrame</span></code>
+          </td>
+          <td><p>DataFrame containing columns to be checked.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>prohibited_col_names</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td><p>List of prohibited column names.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>DataFrameProhibitedColumnError</code>
+          </td>
+          <td><p>If the prohibited column names are present among the specified DataFrame columns.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>functions/dataframe_validator.py</code></summary>
+        <pre class="highlight"><code class="language-python">def validate_absence_of_columns(df: DataFrame, prohibited_col_names: List[str]) -&gt; None:
+    """
+    Validate that none of the prohibited column names are present among
+    specified DataFrame columns.
+
+    :param df: DataFrame containing columns to be checked.
+    :param prohibited_col_names: List of prohibited column names.
+    :raises DataFrameProhibitedColumnError: If the prohibited column names are
+    present among the specified DataFrame columns.
+    """
+    all_col_names = df.columns
+    extra_col_names = [x for x in all_col_names if x in prohibited_col_names]
+    error_message = "The {extra_col_names} columns are not allowed to be included in the DataFrame with the following columns {all_col_names}".format(
+        extra_col_names=extra_col_names, all_col_names=all_col_names
+    )
+    if extra_col_names:
+        raise DataFrameProhibitedColumnError(error_message)</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="functions.dataframe_validator.validate_presence_of_columns" class="doc doc-heading">
+<code class="highlight language-python">validate_presence_of_columns(df, required_col_names)</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Validates the presence of column names in a DataFrame.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>df</code></td>
+          <td>
+                <code><span title="pyspark.sql.DataFrame">DataFrame</span></code>
+          </td>
+          <td><p>A spark DataFrame.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>required_col_names</code></td>
+          <td>
+                <code><span title="typing.List">List</span>[str]</code>
+          </td>
+          <td><p>List of the required column names for the DataFrame.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>None</code>
+          </td>
+          <td><p>None.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>DataFrameMissingColumnError</code>
+          </td>
+          <td><p>if any of the requested column names are not present in the DataFrame.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>functions/dataframe_validator.py</code></summary>
+        <pre class="highlight"><code class="language-python">def validate_presence_of_columns(df: DataFrame, required_col_names: List[str]) -&gt; None:
+    """Validates the presence of column names in a DataFrame.
+
+    :param df: A spark DataFrame.
+    :type df: DataFrame`
+    :param required_col_names: List of the required column names for the DataFrame.
+    :type required_col_names: :py:class:`list` of :py:class:`str`
+    :return: None.
+    :raises DataFrameMissingColumnError: if any of the requested column names are
+    not present in the DataFrame.
+    """
+    all_col_names = df.columns
+    missing_col_names = [x for x in required_col_names if x not in all_col_names]
+    error_message = "The {missing_col_names} columns are not included in the DataFrame with the following columns {all_col_names}".format(
+        missing_col_names=missing_col_names, all_col_names=all_col_names
+    )
+    if missing_col_names:
+        raise DataFrameMissingColumnError(error_message)</code></pre>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="functions.dataframe_validator.validate_schema" class="doc doc-heading">
+<code class="highlight language-python">validate_schema(df, required_schema, ignore_nullable=False)</code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>This function will validate that a given DataFrame has a given StructType as its
+schema.</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>df</code></td>
+          <td>
+                <code><span title="pyspark.sql.DataFrame">DataFrame</span></code>
+          </td>
+          <td><p>DataFrame to validate</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>required_schema</code></td>
+          <td>
+                <code><span title="pyspark.sql.types.StructType">StructType</span></code>
+          </td>
+          <td><p>StructType required for the DataFrame</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>ignore_nullable</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>(Optional) A flag for if nullable fields should be ignored during validation</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>DataFrameMissingStructFieldError</code>
+          </td>
+          <td><p>if any StructFields from the required schema are not included in the DataFrame schema</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+      <details class="quote">
+        <summary>Source code in <code>functions/dataframe_validator.py</code></summary>
+        <pre class="highlight"><code class="language-python">def validate_schema(df: DataFrame, required_schema: StructType, ignore_nullable: bool=False) -&gt; None:
+    """
+    This function will validate that a given DataFrame has a given StructType as its
+    schema.
+
+    :param df: DataFrame to validate
+    :type df: DataFrame
+    :param required_schema: StructType required for the DataFrame
+    :type required_schema: StructType
+    :param ignore_nullable: (Optional) A flag for if nullable fields should be
+    ignored during validation
+    :type ignore_nullable: bool, optional
+
+    :raises DataFrameMissingStructFieldError: if any StructFields from the required
+    schema are not included in the DataFrame schema
+    """
+    _all_struct_fields = copy.deepcopy(df.schema)
+    _required_schema = copy.deepcopy(required_schema)
+
+    if ignore_nullable:
+        for x in _all_struct_fields:
+            x.nullable = None
+
+        for x in _required_schema:
+            x.nullable = None
+
+    missing_struct_fields = [x for x in _required_schema if x not in _all_struct_fields]
+    error_message = "The {missing_struct_fields} StructFields are not included in the DataFrame with the following StructFields {all_struct_fields}".format(
+        missing_struct_fields=missing_struct_fields,
+        all_struct_fields=_all_struct_fields,
+    )
+    if missing_struct_fields:
+        raise DataFrameMissingStructFieldError(error_message)</code></pre>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

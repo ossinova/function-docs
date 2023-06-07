@@ -1,5 +1,4 @@
-site_name: Demo - Functions
-site_url : https://ossinova.github.io/function-docs/ 
+site_name: functions
 
 theme:
   name: "readthedocs"
@@ -21,7 +20,7 @@ plugins:
             show_source: true
 
 nav:
-  - Home: index.md
+  - Mack: index.md
   - API Docs: reference/SUMMARY.md
 
 markdown_extensions:
